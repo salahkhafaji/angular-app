@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">Filters</h5>
+        </div>
+        <div class="card-body">
+          <input type="text" class="form-control mb-2" [(ngModel)]="searchTerm" (input)="search()" placeholder="Search products...">
+          <select class="form-control mb-2" [(ngModel)]="selectedCategory" (change)="filter()">
+            <option value="">All Categories</option>
+            <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+          </select>
+          <input type="number" class="form-control mb-2" [(ngModel)]="minPrice" placeholder="Min Price">
+          <input type="number" class="form-control mb-2" [(ngModel)]="maxPrice" placeholder="Max Price">
+          <button (click)="filter()" class="btn btn-primary w-100">Apply Filters</button>
+          <button (click)="resetFilters()" class="btn btn-secondary w-100 mt-2">Reset</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-9">
+      <h3>Products ({{filteredProducts.length}})</h3>
+      <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let product of filteredProducts">
+          <div class="card h-100 shadow-sm">
+            <img [src]="product.imageUrl" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text text-primary h5">${{product.price}}</p>
+              <p class="card-text small">Stock: {{product.stock}}</p>
+              <a [routerLink]="['/products', product.id]" class="btn btn-info btn-sm w-100 mb-2">View Details</a>
+              <button (click)="addToCart(product)" class="btn btn-primary btn-sm w-100" [disabled]="product.stock === 0">
+                {{product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <h2>Customer Orders</h2>
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr><th>Order ID</th><th>Total</th><th>Status</th><th>Date</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>#{{order.id}}</td><td>${{order.total}}</td><td>{{order.status}}</td><td>{{order.createdAt | date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

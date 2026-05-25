@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "customer@test.com",
+      "password": "customer123",
+      "name": "John Customer",
+      "role": "customer",
+      "phone": "1234567890",
+      "address": "123 Main St",
+      "createdAt": "2024-01-01T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "email": "seller@test.com",
+      "password": "seller123",
+      "name": "Jane Seller",
+      "role": "seller",
+      "phone": "0987654321",
+      "address": "456 Market St",
+      "createdAt": "2024-01-02T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "email": "admin@test.com",
+      "password": "admin123",
+      "name": "Admin User",
+      "role": "admin",
+      "phone": "5555555555",
+      "address": "789 Admin Rd",
+      "createdAt": "2024-01-03T10:00:00Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Smartphone X",
+      "description": "Latest smartphone with amazing features",
+      "price": 699,
+      "category": "Electronics",
+      "stock": 50,
+      "imageUrl": "https://via.placeholder.com/300",
+      "sellerId": 2,
+      "createdAt": "2024-01-10T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Laptop Pro",
+      "description": "Powerful laptop for professionals",
+      "price": 1299,
+      "category": "Electronics",
+      "stock": 30,
+      "imageUrl": "https://via.placeholder.com/300",
+      "sellerId": 2,
+      "createdAt": "2024-01-11T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Running Shoes",
+      "description": "Comfortable running shoes",
+      "price": 89,
+      "category": "Sports",
+      "stock": 100,
+      "imageUrl": "https://via.placeholder.com/300",
+      "sellerId": 2,
+      "createdAt": "2024-01-12T10:00:00Z"
+    }
+  ],
+  "cart": [],
+  "orders": [],
+  "wishlist": [],
+  "reviews": []
+}
+

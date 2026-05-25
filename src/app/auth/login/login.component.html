@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0">Login</h3>
+        </div>
+        <div class="card-body">
+          <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+          <form (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label>Email</label>
+              <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label>Password</label>
+              <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <div class="text-center mt-3">
+              <a routerLink="/register" class="text-decoration-none">Create Account</a>
+            </div>
+          </form>
+          <hr>
+          <small class="text-muted">Test: customer@test.com / customer123</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

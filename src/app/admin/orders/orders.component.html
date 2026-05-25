@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2>Order Management</h2>
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr><th>Order ID</th><th>Total</th><th>Status</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>#{{order.id}}</td><td>${{order.total}}</td>
+        <td>
+          <span class="badge" [class.bg-warning]="order.status === 'pending'">
+            {{order.status}}
+          </span>
+        </td>
+        <td>
+          <select class="form-control" (change)="updateStatus(order.id, $event)">
+            <option [selected]="order.status === 'pending'">pending</option>
+            <option [selected]="order.status === 'processing'">processing</option>
+            <option [selected]="order.status === 'shipped'">shipped</option>
+            <option [selected]="order.status === 'delivered'">delivered</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

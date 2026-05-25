@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <div class="bg-primary text-white p-5 rounded mb-4 text-center">
+    <h1 class="display-4">Welcome to E-Commerce Store</h1>
+    <p class="lead">Best deals, best prices!</p>
+    <a routerLink="/products" class="btn btn-light btn-lg">Shop Now</a>
+  </div>
+  
+  <h3 class="mb-4">Featured Products</h3>
+  <div class="row">
+    <div class="col-md-3 mb-4" *ngFor="let product of featuredProducts">
+      <div class="card h-100 shadow-sm">
+        <img [src]="product.imageUrl" class="card-img-top" style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text text-primary h5">${{product.price}}</p>
+          <a [routerLink]="['/products', product.id]" class="btn btn-outline-primary btn-sm">View Details</a>
+          <button (click)="addToCart(product)" class="btn btn-primary btn-sm ms-2">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
